@@ -35,6 +35,12 @@
                         <button style="border-radius: 10px;">Usuarios</button>
                     </a> 
                 </div> 
+                <div class="carta">
+                    <h3>Mesas</h3>
+                    <a href="../crud_ajax_mesa/index.php">
+                        <button style="border-radius: 10px;">Mesas</button>
+                    </a> 
+                </div> 
             </div>
         </div>
     </section>

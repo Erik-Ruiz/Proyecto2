@@ -108,6 +108,7 @@ if(empty($_SESSION['login'])){
             </div>
         </div>
     </div>
+    <script src="../js/valid-form-ajax_cam.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>

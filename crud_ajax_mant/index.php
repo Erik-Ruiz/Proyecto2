@@ -53,15 +53,15 @@ if(empty($_SESSION['login'])){
                             <div class="form-group">
                                 <label for="">Nombre</label>
                                 <input type="hidden" name="idp" id="idp" value="" onsubmit="return validacion();">
-                                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
+                                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Correo</label>
-                                <input type="text" name="correo" id="correo" placeholder="Correo" class="form-control">
+                                <input type="text" name="correo" id="correo" placeholder="Correo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Password</label>
-                                <input type="text" name="password" id="password" placeholder="Password" class="form-control">
+                                <input type="text" name="password" id="password" placeholder="Password" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block">
@@ -96,7 +96,9 @@ if(empty($_SESSION['login'])){
                 </table>
             </div>
         </div>
-    </div>
+    </div>    
+    
+    <script src="../js/valid-form-ajax_mant.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>

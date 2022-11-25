@@ -1,6 +1,8 @@
 ListarProductos('');
 function ListarProductos(busqueda) {
 
+    
+
     var resultado= document.getElementById('resultado');
     //var frmbusqueda=document.getElementById('frmbusqueda');
     var formdata = new FormData();
@@ -42,12 +44,16 @@ function ListarProductos(busqueda) {
 
 registrar.addEventListener("click", () => {
 
+
         var form = document.getElementById('frm');
          
-
-            
+           
         var formdata = new FormData(form);
-        
+
+    if(validacion_ajax_cam()==true){
+
+    
+
         var ajax = new XMLHttpRequest();
         ajax.open('POST', 'registrar.php');
             ajax.onload=function (){
@@ -80,7 +86,7 @@ registrar.addEventListener("click", () => {
             }
             ajax.send(formdata);
             
-    
+        }
 });
 
 function Eliminar(id) 

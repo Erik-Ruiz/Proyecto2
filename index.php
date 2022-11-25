@@ -34,7 +34,7 @@
                         <i id ="icono1" class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" id="password" name="pass" required>
+                        <input type="password" class="password" placeholder="Enter your password" id="passw" name="pass" required>
                         <i id ="icono2" class="uil uil-lock icon"></i>
                     </div>
                     <div class="input-field button">

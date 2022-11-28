@@ -15,6 +15,10 @@ if(empty($_SESSION['login'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD php Vanilla</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+
 </head>
 
 <body>
@@ -59,7 +63,7 @@ if(empty($_SESSION['login'])){
                             <div class="form-group">
                                 <label for="">Nombre</label>
                                 <input type="hidden" name="idp" id="idp" value="">
-                                <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
+                                <input type="text" name="nombre_mesa" id="nombre_mesa" placeholder="Nombre" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="">Estado</label>
@@ -67,10 +71,10 @@ if(empty($_SESSION['login'])){
                             </div>
                             <div class="form-group">
                                 <label for="">Sala</label>
-                                <input type="text" name="sala" id="sala" placeholder="Sala" class="form-control">
+                                <input type="number" name="id_sala" id="id_sala" placeholder="Sala" class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block">
+                                <button type="submit" value="Registrar" id="registrar" class="btn btn-primary btn-block">Registrar</button>
                             </div>
                         </form>
                     </div>
@@ -106,7 +110,6 @@ if(empty($_SESSION['login'])){
     </div>
     <!-- <script src="../js/valid-form-ajax_cam.js"></script> -->
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>

@@ -47,42 +47,42 @@ registrar.addEventListener("click", () => {
        
     var formdata = new FormData(form);
 
-if(validacion_ajax_mant()==true){
+    if(validacion_ajax_mant()==true){
 
 
 
-    var ajax = new XMLHttpRequest();
-    ajax.open('POST', 'registrar.php');
-        ajax.onload=function (){
-            if(ajax.status===200){
-                
-                if (ajax.responseText == "ok") {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Registrado',
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    form.reset();
-                    ListarProductos('');
-                }else{
+        var ajax = new XMLHttpRequest();
+        ajax.open('POST', 'registrar.php');
+            ajax.onload=function (){
+                if(ajax.status===200){
+                    
+                    if (ajax.responseText == "ok") {
                         Swal.fire({
                             icon: 'success',
-                            title: 'Modificado',
+                            title: 'Registrado',
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        registrar.value = "Registrar";
-                        idp.value = "";
-                        ListarProductos('');
                         form.reset();
-                    }
-            }else{
-                respuesta_ajax.innerText = 'Error';
+                        ListarProductos('');
+                    }else{
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Modificado',
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            registrar.value = "Registrar";
+                            idp.value = "";
+                            ListarProductos('');
+                            form.reset();
+                        }
+                }else{
+                    respuesta_ajax.innerText = 'Error';
+                }
             }
-        }
-        ajax.send(formdata);
-        
+            ajax.send(formdata);
+            
     }
 });
 

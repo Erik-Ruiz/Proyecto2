@@ -52,7 +52,7 @@ if(empty($_SESSION['login'])){
                         <form action="" method="post" id="frm">
                             <div class="form-group">
                                 <label for="">Nombre</label>
-                                <input type="hidden" name="idp" id="idp" value="" onsubmit="return validacion();">
+                                <input type="hidden" name="idp" id="idp" value="">
                                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" required>
                             </div>
                             <div class="form-group">

@@ -5,7 +5,7 @@ require_once "conexion.php";
 
 if(!empty($_POST['busqueda'])){
     $data=$_POST['busqueda'];
-    $consulta = $pdo->prepare("SELECT * FROM tbl_mesa WHERE id LIKE '%".$data."%' OR nombre_mesa LIKE '%".$data."%' OR estado LIKE '%".$data."%' OR sala LIKE '%".$data."%'");
+    $consulta = $pdo->prepare("SELECT * FROM tbl_mesa WHERE id LIKE '%".$data."%' OR nombre_mesa LIKE '%".$data."%' OR estado LIKE '%".$data."%' OR id_sala LIKE '%".$data."%'");
     $consulta->execute();
 }else{
     //echo 'hola';

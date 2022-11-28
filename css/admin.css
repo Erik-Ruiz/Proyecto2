@@ -9,13 +9,13 @@ button{
     background-color: rgb(7, 115, 183);
 }
     #paginas-ajax{
-        background-color: rgb(30,30,30);
+        background-color: rgb(36, 90, 254);
         color: white;
         text-align: center;
     }
     
     #paginas-ajax .container{
-        padding: 150px 12px;
+        padding: 50px 12px;
     }
     
     #paginas-ajax h2{
@@ -30,8 +30,8 @@ button{
     #paginas-ajax .carta{
         background-position: center center;
         background-size: cover;
-        padding: 50px 0px;
-        margin: 30px;
+        padding: 40px 0px;
+        margin: 20px;
         border-radius: 15px;
     }
     

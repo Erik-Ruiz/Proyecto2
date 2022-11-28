@@ -120,6 +120,11 @@ if(empty($_SESSION['login'])){
                                             <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">   
                                             <input type='hidden' name='funcion' value='Mantenimiento'>
                                         </form>
+                                        <form  class="padding" >
+                                            <input type="button" onclick="document.getElementById('id01')" class="favorite styledr" value="Reservar">
+                                            <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">   
+                                            <input type='hidden' name='funcion' value='Reservar'>
+                                        </form>
                                     </div>
 
                                 </div>   
@@ -150,6 +155,8 @@ if(empty($_SESSION['login'])){
                                                 </form>
                                             </div>
                                         </div>
+
+      
                             
                         <?php
                             } else {
@@ -163,6 +170,41 @@ if(empty($_SESSION['login'])){
                         ?>
 
                 <?php $contmesa++; } ?>
-            </div>       
+            </div>
+            
+            <html>
+
+<body>
+
+<h2>Delete Modal</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'">Reservar</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Reserva</h1>
+      <p>Elige el día y la hora</p>
+    
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>   
+
     </body>
 </html>

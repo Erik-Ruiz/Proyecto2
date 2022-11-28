@@ -1,5 +1,5 @@
 <?php
-    require "conexion.php";
+    require "../controller/conexion.php";
     $id=$_POST['id'];
     $query = $pdo->prepare("SELECT * FROM tbl_camarero WHERE id = :id");
     $query->bindParam(":id", $id);

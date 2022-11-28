@@ -6,7 +6,7 @@ if (isset($_POST)) {
 
 
 
-    require("conexion.php");
+    require "../controller/conexion.php";
     if (empty($_POST['idp'])){
         $stmt = $pdo->prepare("INSERT INTO tbl_mesa (nombre_mesa, estado, id_sala,id_camarero,id_mantenimiento) VALUES (:nom , :est, :sal, :cam, :mant)");
         // $sql = "INSERT INTO tbl_mesa (nombre_mesa, estado, id_sala) VALUES ($nombre , $estado, $sala)";

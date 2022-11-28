@@ -1,5 +1,5 @@
 <?php
-    require_once "conexion.php";
+    require "../controller/conexion.php";
     $data = $_POST['id'];
     
     $query = $pdo->prepare("DELETE FROM tbl_mantenimiento WHERE id = :id");

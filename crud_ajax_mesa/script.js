@@ -46,34 +46,11 @@ function ListarProductos(busqueda) {
 
 }
 
-registrar.addEventListener("click", () => {
-
-
+frm.addEventListener("submit", (e) => {
+        e.preventDefault();
         var form = document.getElementById('frm');         
         var formdata = new FormData(form);
 
-        // var form = document.querySelector('frm');         
-        // form.onsubmit = e =>{
-
-        //    var nombre_mesa = document.getElementById('nombre_mesa').value;
-        //    var estado = document.getElementById('estado').value;
-        //    var id_sala = document.getElementById('id_sala').value;
-        //    var idp = document.getElementById('idp').value;
-
-
-        //    var formdata = new FormData();
-        //    formdata.append('nombre_mesa', nombre_mesa);
-        //    formdata.append('estado', estado);
-        //    formdata.append('id_sala', id_sala);
-        //    formdata.append('idp', idp);
-
-        //    e.preventDefault();
-
-        // }
-
-    //     alert(form);
-  
-    // alert(formdata);
         var ajax = new XMLHttpRequest();
         ajax.open('POST', 'registrar.php');
             ajax.onload=function (){

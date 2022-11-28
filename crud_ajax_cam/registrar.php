@@ -5,7 +5,7 @@ if (isset($_POST)) {
     $correo = $_POST['correo'];
     $password = $_POST['password'];
 
-    require("conexion.php");
+    require "../controller/conexion.php";
     if (empty($_POST['idp'])){
         $stmt = $pdo->prepare("INSERT INTO tbl_camarero (nombre, apellido, correo, password) VALUES (:nom , :ape, :cor, :pas)");
         $stmt->bindParam(':nom', $nombre);

@@ -15,7 +15,7 @@ require_once '../controller/connection.php';
     <nav class="navbar bg-light fixed-top">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="./camareros.php">Mantenimiento <a class="navbar-brand" href="#">Mesas a reparar</a></a>
+            <a class="navbar-brand" href="#">Mantenimiento <a class="navbar-brand" href="#">Mesas a reparar</a></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>

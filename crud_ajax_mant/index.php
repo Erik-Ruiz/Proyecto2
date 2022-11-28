@@ -19,7 +19,6 @@ if(empty($_SESSION['login'])){
     <link rel="stylesheet" href="../css/terraza.css" />
 <!-- VALIDACIONES     -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/valid-form.js"></script>
 
 </head>
 

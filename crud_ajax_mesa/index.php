@@ -17,7 +17,7 @@ if(empty($_SESSION['login'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -25,7 +25,7 @@ if(empty($_SESSION['login'])){
     <nav class="navbar bg-light fixed-top">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="../pages/admin.php">Administrador <a class="navbar-brand" href="#">Usuarios Camareros</a></a>
+            <a class="navbar-brand" href="../pages/admin.php">Administrador <a class="navbar-brand" href="#">Registro de Mesas</a></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -66,12 +66,21 @@ if(empty($_SESSION['login'])){
                                 <input type="text" name="nombre_mesa" id="nombre_mesa" placeholder="Nombre" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="">Estado</label>
-                                <input type="text" name="estado" id="estado" placeholder="Estado" class="form-control">
+
+                            <label for="estado">Estado de la mesa:</label>
+                            <select name="estado" id="estado" placeholder="Estado" class="form-control">
+                                    <option value="Libre">Libre</option>
+                                    <option value="Ocupada">Ocupada</option>
+                                    <option value="Mantenimiento">Mantenimiento</option>
+
+                                </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Sala</label>
-                                <input type="number" name="id_sala" id="id_sala" placeholder="Sala" class="form-control">
+                            <label for="sala">Elige una sala:</label>
+                                <select name="id_sala" id="id_sala" placeholder="Sala" class="form-control">
+                                    <option value="1">Terraza 1</option>
+                                    <option value="2">Terraza 2</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <button type="submit" value="Registrar" id="registrar" class="btn btn-primary btn-block">Registrar</button>

@@ -1,6 +1,6 @@
 <?php
-require_once "conexion.php";
-//$consulta=null;
+    require "../controller/conexion.php";
+    //$consulta=null;
 
 
 if(!empty($_POST['busqueda'])){

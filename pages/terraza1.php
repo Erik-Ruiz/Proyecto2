@@ -16,6 +16,8 @@ if(empty($_SESSION['login'])){
 
 <head>
     <link rel="stylesheet" href="../css/terraza.css" />
+    <script type="text/javascript" src="../js/modal.js"></script> 
+
 </head>
 
     <nav class="navbar bg-light fixed-top">
@@ -90,12 +92,16 @@ if(empty($_SESSION['login'])){
         // mysqli_fetch_all($resultadoconsulta);
 
         ?>
+
+
             <div class="mesa_botones">
-                <?php                
+                <?php
+                             
                     $contmesa=0;
                     foreach($resultfa as $mesa){
-
-                        if ($resultfa[$contmesa]['estado'] == 'Libre') {
+                        
+                        
+                        if ($mesa['estado'] == 'Libre') {
                     ?>
                                 
                                 <div class="img_btn"> 
@@ -111,20 +117,21 @@ if(empty($_SESSION['login'])){
                                             <input type='hidden' name='funcion' value='Libre'>  
                                         </form>
                                         <form method="post" class="padding" action="../controller/mesa.php">
-                                            <input type="submit" class="favorite styleda" value="Ocupar"/>
                                             <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">   
                                             <input type='hidden' name='funcion' value='Ocupado'>
+                                            <input type="submit" class="favorite styleda" value="Ocupar"/>
                                         </form>
                                         <form method="post" class="padding" action="../controller/mesa.php">
-                                            <input type="submit" class="favorite styledb" value="Reparar"  />
                                             <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">   
                                             <input type='hidden' name='funcion' value='Mantenimiento'>
+                                            <input type="submit" class="favorite styledb" value="Reparar"  />
+
                                         </form>
-                                        <form  class="padding" >
-                                            <input type="button" onclick="document.getElementById('id01')" class="favorite styledr" value="Reservar">
-                                            <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">   
-                                            <input type='hidden' name='funcion' value='Reservar'>
-                                        </form>
+                                        <!-- <form method="post" class="padding" action="../controller/crear_reserva.php"> -->
+                                            <!-- <input type="hidden" name="id_table" value="<?php echo $resultfa[$contmesa]['id']; ?>">    -->
+                                            <!-- <input type='hidden' name='funcion' value='Reservar'> -->
+                                            <button class="favorite styledr" onclick="abrirModal(<?php echo $mesa['id']; ?>)">Reservar</button>
+                                            <!-- </form> -->
                                     </div>
 
                                 </div>   
@@ -148,7 +155,7 @@ if(empty($_SESSION['login'])){
                                                     <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">   
                                                     <input type='hidden' name='funcion' value='Ocupado'>
                                                 </form>
-                                                <form method="post" class="padding" action="../controller/mesa.php">
+                                                <form method="POST" class="padding" action="../controller/mesa.php">
                                                     <!-- <input type="submit" class="favorite styledb" value="Reparar"  /> -->
                                                     <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">   
                                                     <input type='hidden' name='funcion' value='Mantenimiento'>
@@ -169,25 +176,30 @@ if(empty($_SESSION['login'])){
                             }
                         ?>
 
-                <?php $contmesa++; } ?>
+                <?php $contmesa++; }
+                
+                ?>
             </div>
-            
             <html>
 
 <body>
 
-<h2>Delete Modal</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'">Reservar</button>
-
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content" action="/action_page.php">
+
+  <form class="modal-content" action="../controller/crear_reserva.php"  method="POST" >
     <div class="container">
       <h1>Reserva</h1>
       <p>Elige el día y la hora</p>
-    
+      <label >Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required pattern="\d{4}-\d{2}-\d{2}" />
+      <label >Hora:</label>
+      <input type="time" id="hora" name="hora" required/>
+
+      <input id="identificador" type="hidden" name="id_table" />   
+
     </div>
+    <input style="border-radius: 0%;" type="submit" class="btn btn-success" value="Reservar">
   </form>
 </div>
 

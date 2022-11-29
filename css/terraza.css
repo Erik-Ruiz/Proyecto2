@@ -54,6 +54,7 @@
 
 .styledr{
   border: 0;
+  height: 40px;
   line-height: 2.5;
   padding: 0 10px;
   font-size: 1rem;
@@ -99,22 +100,7 @@
       padding: 16px;
       text-align: center;
     }
-/* 
-    button {
-      background-color: #04AA6D;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
-    }
-    
-    button:hover {
-      opacity:1;
-    } */
-    
+   
     /* Float cancel and delete buttons and add an equal width */
     .cancelbtn, .deletebtn {
       float: left;

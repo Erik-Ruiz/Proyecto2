@@ -51,8 +51,10 @@ frm.addEventListener("submit", (e) => {
         var form = document.getElementById('frm');         
         var formdata = new FormData(form);
 
-        var ajax = new XMLHttpRequest();
-        ajax.open('POST', 'registrar.php');
+        // if(validacion_ajax_reservas()==true){
+
+            var ajax = new XMLHttpRequest();
+            ajax.open('POST', 'registrar.php');
             ajax.onload=function (){
                 if(ajax.status==200){
                     if (ajax.responseText == "ok") {
@@ -81,6 +83,7 @@ frm.addEventListener("submit", (e) => {
             
             }
             ajax.send(formdata);
+        //  }
 });
 
 function Eliminar(id) 
@@ -154,6 +157,7 @@ function Editar(id) {
        
 
 }
+
 buscar.addEventListener("keyup", () => {
     const valor = buscar.value;
     if (valor == "") {
@@ -162,3 +166,4 @@ buscar.addEventListener("keyup", () => {
         ListarProductos(valor);
     }
 });
+

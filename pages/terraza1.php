@@ -17,6 +17,9 @@ if(empty($_SESSION['login'])){
 <head>
     <link rel="stylesheet" href="../css/terraza.css" />
     <script type="text/javascript" src="../js/modal.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -162,9 +165,6 @@ if(empty($_SESSION['login'])){
                                                 </form>
                                             </div>
                                         </div>
-
-      
-                            
                         <?php
                             } else {
                                 ?>
@@ -213,6 +213,20 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+    const valores = window.location.search;
+    const urlParams = new URLSearchParams(valores);
+
+    window.location.href.replace(window.location.search,'');
+  if(urlParams.has('error'))
+    Swal.fire({
+        icon: 'error',
+        title: 'Mesa Reservada',
+        showConfirmButton: false,
+        timer: 1500
+    })
+   
 </script>
 
 </body>

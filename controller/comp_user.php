@@ -25,7 +25,7 @@ try{
 
     $resultado = mysqli_query($conexion,$sql);
 
-    var_dump($resultado);
+    // var_dump($resultado);
     $num=mysqli_num_rows($resultado);
 
 

@@ -22,7 +22,7 @@ if(empty($_SESSION['login'])){
 </head>
 
 <body>
-    <nav class="navbar bg-light fixed-top">
+    <!-- <nav class="navbar bg-light fixed-top">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="../pages/camareros.php">Camarero <a class="navbar-brand" href="#">Registro de Reservas</a></a>
@@ -50,7 +50,73 @@ if(empty($_SESSION['login'])){
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <nav class="navbar bg-light fixed-top" >
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="../pages/camareros.php">Camareros</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Camareros</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+          <a style="float: center;" href="../crud_ajax_reservas/index.php">
+              <button style="border-radius: 10px;">Reservas</button>
+          </a> 
+
+      <div class="offcanvas-body align-self-center text-center">
+        
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Terrazas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../pages/terraza1.php">Terraza 1</a></li>
+              <li><a class="dropdown-item" href="../pages/terraza2.php">Terraza 2</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sala Privada
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Sala Privada 1</a></li>
+            </ul>
+
+          </li>
+        </ul>
+
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Comedor
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Sala 1</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <form class="d-flex" role="search" action="../controller/logout.php" method="POST">
+          <button class="btn btn-outline-danger" name="logout" type="submit">Log Out</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</nav>
     <div style="margin-top: 10%;" class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -66,14 +132,26 @@ if(empty($_SESSION['login'])){
                                 <input type="text" name="id_mesa" id="id_mesa" placeholder="Nombre" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="">Fecha</label>
-                                
+                                <label for="">Elige la fecha:</label>                                
                                 <input type="date" name="fecha" id="fecha" placeholder="Fecha" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label for="">Hora</label>
-                                
+                            <!-- <div class="form-group">
+                                <label for="">Hora</label>                                
                                 <input type="time" name="hora" id="hora" placeholder="Hora" class="form-control">
+                            </div> -->
+                            <div class="form-group">
+                            <label for="sala">Elige la hora:</label>
+                                <select name="hora" id="hora" placeholder="Hora" class="form-control">
+                                    <option value="13:00:00">13:00</option>
+                                    <option value="14:00:00">14:00</option>
+                                    <option value="15:00:00">15:00</option>
+                                    <option value="16:00:00">16:00</option>
+                                    <option value="20:00:00">20:00</option>
+                                    <option value="21:00:00">21:00</option>
+                                    <option value="22:00:00">22:00</option>
+                                    <option value="23:00:00">23:00</option>
+
+                                </select>
                             </div>
                             <div class="form-group">
                                 <button type="submit" value="Actualizar" id="actualizar" class="btn btn-primary btn-block">Actualizar</button>
@@ -110,8 +188,10 @@ if(empty($_SESSION['login'])){
             </div>
         </div>
     </div>
-    <!-- <script src="../js/valid-form-ajax_cam.js"></script> -->
+    <!-- <script src="../js/valid-form-reservas.js"></script> -->
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 
 </html>

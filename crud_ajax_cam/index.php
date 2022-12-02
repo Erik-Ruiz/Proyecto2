@@ -17,7 +17,7 @@ if(empty($_SESSION['login'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #BBD2C5;">
     <nav class="navbar bg-light fixed-top">
         <div class="container-fluid">
 
@@ -49,10 +49,10 @@ if(empty($_SESSION['login'])){
     </nav>
     <div style="margin-top: 10%;" class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4" style="padding-top: 10px;">
                 <div class="card">
-                    <div class="card-header bg-primary">
-                        <h3 class="text-center">Registro de Camareros</h3>
+                    <div class="card-header " style="background-color: #292E49;">
+                        <h3 class="text-center" style="color: white;">Registro de Camareros</h3>
                     </div>
                     <div class="card-body">
                         <form action="" method="post" id="frm">
@@ -74,7 +74,7 @@ if(empty($_SESSION['login'])){
                                 <input type="text" name="password" id="password" placeholder="Password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block">
+                                <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block" style="background-color: #536976;">
                             </div>
                         </form>
                     </div>
@@ -82,7 +82,7 @@ if(empty($_SESSION['login'])){
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    <div class="col-lg-6 ml-auto">
+                    <div >
                         <form action="" method="post" id="frmbusqueda">
                             <div class="form-group">
                                 <label for="buscra">Buscar:</label>
@@ -91,8 +91,8 @@ if(empty($_SESSION['login'])){
                         </form>
                     </div>
                 </div>
-                <table class="table table-hover table-resposive">
-                    <thead class="thead-dark">
+                <table class="table table-hover table-resposive " style="background-color: WHITE;">
+                    <thead style="background-color: #292E49; color: white">
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>

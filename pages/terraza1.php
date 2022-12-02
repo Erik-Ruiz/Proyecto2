@@ -38,6 +38,9 @@ if(empty($_SESSION['login'])){
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
 
+                <a  class=" align-self-center text-center" href="../crud_ajax_reservas/index.php">
+                    <button >Reservas</button>
+                </a> 
                 <div class="offcanvas-body align-self-center text-center">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item dropdown">
@@ -84,7 +87,7 @@ if(empty($_SESSION['login'])){
             </div>
         </div>
     </nav>
-
+        <!-- LISTADO DE LAS MESAS -->
         <?php
         $sql = "SELECT estado,id FROM tbl_mesa  WHERE id_sala=1";
         $stmt=mysqli_stmt_init($conexion);
@@ -92,7 +95,19 @@ if(empty($_SESSION['login'])){
         mysqli_stmt_execute($stmt);
         $resultadoconsulta=mysqli_stmt_get_result($stmt);
         $resultfa=$resultadoconsulta->fetch_all(MYSQLI_ASSOC);
-        // mysqli_fetch_all($resultadoconsulta);
+
+        // COMPROBAR SI LAS MESAS ESTAN RESERVADAS
+        // $fecha_actual = date("Y-m-d");
+        // $hora_actual = date("H:i:s");
+        // $sql="SELECT mesa.id as id_mesa, mesa.nombre_mesa as Nombre, reserva.fecha as fecha, reserva.hora as hora FROM tbl_mesa as mesa inner join tbl_reserva as reserva on mesa.id = reserva.id_mesa";
+
+        // // $sql = "SELECT id_mesa, fecha, hora FROM tbl_reserva";
+        // $resultado = mysqli_query($conexion,$sql);
+        // if ($resultado['fecha'] == $fecha_actual && $resultado['hora'] == $hora_actual) {
+
+        //     $conexion->query("UPDATE tbl_mesa SET estado = 'Ocupado' WHERE id = ");
+
+        // }
 
         ?>
 
@@ -113,10 +128,9 @@ if(empty($_SESSION['login'])){
                                         <img src='../img/mesaPequeLibre.png' /> 
                                     </div>
 
-                                    <div class="btn" style="background-color: green;">
+                                    <div class="btn" style="background-color: #536976;">
                                         <form method="post" class="padding" action="../controller/mesa.php">
                                             <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">    
-                                            <!-- <input type="submit" class="favorite styledc" value="Liberar" name="Libre" /> -->
                                             <input type='hidden' name='funcion' value='Libre'>  
                                         </form>
                                         <form method="post" class="padding" action="../controller/mesa.php">
@@ -130,11 +144,7 @@ if(empty($_SESSION['login'])){
                                             <input type="submit" class="favorite styledb" value="Reparar"  />
 
                                         </form>
-                                        <!-- <form method="post" class="padding" action="../controller/crear_reserva.php"> -->
-                                            <!-- <input type="hidden" name="id_table" value="<?php echo $resultfa[$contmesa]['id']; ?>">    -->
-                                            <!-- <input type='hidden' name='funcion' value='Reservar'> -->
-                                            <button class="favorite styledr" onclick="abrirModal(<?php echo $mesa['id']; ?>)">Reservar</button>
-                                            <!-- </form> -->
+                                           <button class="favorite styledr" onclick="abrirModal(<?php echo $mesa['id']; ?>)">Reservar</button>
                                     </div>
 
                                 </div>   
@@ -147,7 +157,7 @@ if(empty($_SESSION['login'])){
                                               <img src='../img/mesaPequeOcupada.png' /> 
                                             </div>
 
-                                            <div class="btn" style="background-color: red;">
+                                            <div class="btn" style="background-color: #536976;">
                                                 <form method="post" class="padding" action="../controller/mesa.php">
                                                     <input type="hidden" name="id" value="<?php echo $resultfa[$contmesa]['id']; ?>">    
                                                     <input type="submit" class="favorite styledc" value="Liberar" name="Libre" />
@@ -182,7 +192,7 @@ if(empty($_SESSION['login'])){
             </div>
             <html>
 
-<body>
+<body style="background-color: #BBD2C5;">
 
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
@@ -193,9 +203,18 @@ if(empty($_SESSION['login'])){
       <p>Elige el día y la hora</p>
       <label >Fecha:</label>
       <input type="date" id="fecha" name="fecha" required pattern="\d{4}-\d{2}-\d{2}" />
-      <label >Hora:</label>
-      <input type="time" id="hora" name="hora" required/>
+      <label for="sala">Elige la hora:</label>
+        <select name="hora" id="hora" placeholder="Hora"  required>
+            <option value="13:00:00">13:00</option>
+            <option value="14:00:00">14:00</option>
+            <option value="15:00:00">15:00</option>
+            <option value="16:00:00">16:00</option>
+            <option value="20:00:00">20:00</option>
+            <option value="21:00:00">21:00</option>
+            <option value="22:00:00">22:00</option>
+            <option value="23:00:00">23:00</option>
 
+        </select>
       <input id="identificador" type="hidden" name="id_table" />   
 
     </div>

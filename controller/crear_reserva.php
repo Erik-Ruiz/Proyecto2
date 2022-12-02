@@ -1,7 +1,7 @@
 <?php
 require_once "../controller/connection.php";
 require_once "../controller/conexion.php";
-require_once "../modal/mesa.php";
+// require_once "../modal/mesa.php";
 
 $id_mesa = $_POST['id_table'];
 $fecha = $_POST['fecha'];
@@ -23,16 +23,6 @@ if ($num==1){
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <!-- <script>    
-    Swal.fire({
-        icon: 'error',
-        title: 'Mesa Reservada',
-        showConfirmButton: false,
-        timer: 1500
-    })
-    </script> -->
-    
-</body>
     <?php
         echo "<script>  
 

@@ -51,16 +51,16 @@ frm.addEventListener("submit", (e) => {
         var form = document.getElementById('frm');         
         var formdata = new FormData(form);
 
-        // if(validacion_ajax_reservas()==true){
+        if(validacion()==true){
 
             var ajax = new XMLHttpRequest();
             ajax.open('POST', 'registrar.php');
             ajax.onload=function (){
                 if(ajax.status==200){
-                    if (ajax.responseText == "ok") {
+                    if (ajax.responseText == "vacio") {
                         Swal.fire({
-                            icon: 'success',
-                            title: 'Registrado',
+                            icon: 'error',
+                            title: 'No estas editando ninguna reserva',
                             showConfirmButton: false,
                             timer: 1500
                         });
@@ -81,9 +81,9 @@ frm.addEventListener("submit", (e) => {
                 }           
             
             
-            }
+        }
             ajax.send(formdata);
-        //  }
+          }
 });
 
 function Eliminar(id) 

@@ -26,7 +26,7 @@
 
     <title>Camareros</title>
 </head>
-<body>
+<body style="background-color: #BBD2C5;">
 
 <nav class="navbar bg-light fixed-top" style="height: 15%;">
   <div class="container-fluid">
@@ -45,9 +45,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
 
-          <a style="float: center;" href="../crud_ajax_reservas/index.php">
-              <button style="border-radius: 10px;">Reservas</button>
-          </a> 
+      <a  class=" align-self-center text-center" href="../crud_ajax_reservas/index.php">
+                    <button >Reservas</button>
+                </a> 
 
       <div class="offcanvas-body align-self-center text-center">
         

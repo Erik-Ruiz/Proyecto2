@@ -1,30 +1,26 @@
 
 function validacion() {
 
-    // userI = document.getElementById('icono1');
-    // user = document.getElementById('correo');
+    // fechas = document.getElementById('fecha');
     fecha = document.getElementById('fecha').value;
 
-    // passI = document.getElementById('icono2');
-    // pass = document.getElementById('passw');
-    hora = document.getElementById('hora').value;
-    var x=new Date();
-    if (fecha.lenght == 0) {
-        
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Fecha vacia',
-            
-        })
-        return false;
-      }
-      else if (x<=fecha) {
+    // horas = document.getElementById('hora');
+    // hora = document.getElementById('hora').value;
+    
+    FechaActual = new Date();
+
+    FechaActual = FechaActual.getFullYear()  + '-' + FechaActual.getDate() + '-' + FechaActual.getMonth();
+
+    // const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+
+    // var fecha = new Date(fecha);
+
+if (FechaActual > fecha) {
 
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Fecha erronea',
+            text: 'Fecha no disponible',
             
         })
         return false;

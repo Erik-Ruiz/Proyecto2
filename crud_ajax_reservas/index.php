@@ -16,12 +16,12 @@ if(empty($_SESSION['login'])){
     <title>CRUD php Vanilla</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/valid-form-reservas.js"></script>
 
 </head>
 
-<body>
+<body style="background-color: #BBD2C5;">
     <!-- <nav class="navbar bg-light fixed-top">
         <div class="container-fluid">
 
@@ -119,12 +119,12 @@ if(empty($_SESSION['login'])){
 </nav>
     <div style="margin-top: 10%;" class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header bg-primary">
-                        <h3 class="text-center">Registro de Reservas</h3>
+            <div class="col-lg-4" style="padding-top: 82px;">
+                <div class="card" >
+                    <div class="card-header" style="background-color: #292E49;">
+                        <h3 class="text-center" style="color: White;">Registro de Reservas</h3>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" >
                         <form action="" method="post" id="frm">
                             <div class="form-group">
                                 <label for="">Id_Mesa</label>
@@ -133,7 +133,7 @@ if(empty($_SESSION['login'])){
                             </div>
                             <div class="form-group">
                                 <label for="">Elige la fecha:</label>                                
-                                <input type="date" name="fecha" id="fecha" placeholder="Fecha" class="form-control">
+                                <input type="date" name="fecha" id="fecha" placeholder="Fecha" class="form-control" required>
                             </div>
                             <!-- <div class="form-group">
                                 <label for="">Hora</label>                                
@@ -141,7 +141,7 @@ if(empty($_SESSION['login'])){
                             </div> -->
                             <div class="form-group">
                             <label for="sala">Elige la hora:</label>
-                                <select name="hora" id="hora" placeholder="Hora" class="form-control">
+                                <select name="hora" id="hora" placeholder="Hora" class="form-control" required>
                                     <option value="13:00:00">13:00</option>
                                     <option value="14:00:00">14:00</option>
                                     <option value="15:00:00">15:00</option>
@@ -154,7 +154,7 @@ if(empty($_SESSION['login'])){
                                 </select>
                             </div>
                             <div class="form-group">
-                                <button type="submit" value="Actualizar" id="actualizar" class="btn btn-primary btn-block">Actualizar</button>
+                                <button type="submit" value="Actualizar" id="actualizar" class="btn btn-primary btn-block" style="background-color: #536976;">Actualizar</button>
                             </div>
                         </form>
                     </div>
@@ -171,14 +171,15 @@ if(empty($_SESSION['login'])){
                         </form>
                     </div>
                 </div>
-                <table class="table table-hover table-resposive">
-                    <thead class="thead-dark">
+                <table class="table table-hover table-resposive" style="background-color: WHITE;">
+                    <thead style="background-color: #292E49; color: white">
                         <tr>
                             <th>ID</th>
                             <th>Id_Mesa</th>
                             <th>Fecha</th>
                             <th>Hora</th>
                             <th>Ajustes</th>
+
                         </tr>
                     </thead>
                     <tbody id="resultado">
@@ -188,10 +189,36 @@ if(empty($_SESSION['login'])){
             </div>
         </div>
     </div>
-    <!-- <script src="../js/valid-form-reservas.js"></script> -->
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    <div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
 
+  <form class="modal-content" action="../controller/crear_reserva.php"  method="POST" >
+    <div class="container">
+      <h1>Reserva</h1>
+      <p>Elige el día y la hora</p>
+      <label >Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required pattern="\d{4}-\d{2}-\d{2}" />
+      
+      <label for="sala">Elige la hora:</label>
+        <select name="hora" id="hora" placeholder="Hora"  required>
+            <option value="13:00:00">13:00</option>
+            <option value="14:00:00">14:00</option>
+            <option value="15:00:00">15:00</option>
+            <option value="16:00:00">16:00</option>
+            <option value="20:00:00">20:00</option>
+            <option value="21:00:00">21:00</option>
+            <option value="22:00:00">22:00</option>
+            <option value="23:00:00">23:00</option>
+
+        </select>
+      <input id="identificador" type="hidden" name="id_table" />   
+
+    </div>
+    <input style="border-radius: 0%;" type="submit" class="btn btn-success" value="Reservar">
+  </form>
+</div>
 </body>
 
 </html>

@@ -15,6 +15,8 @@ $resultado = mysqli_query($conexion,$sql);
 
 $num=mysqli_num_rows($resultado);
 
+$fechaActual = date('Y-m-d');
+
 if ($num==1){
 ?>
 <head>
@@ -30,6 +32,13 @@ if ($num==1){
     
         </script>";
 
+}else if($fecha_orden<$fechaActual){
+
+    echo "<script>  
+
+    location.href='../pages/terraza1.php?fechamal';
+
+    </script>";
 }else{
     $stmt=$pdo->prepare("INSERT INTO tbl_reserva(id, id_mesa, fecha, hora) VALUES (null, :idm , :dat, :tim)");                
     $stmt->bindParam(':idm', $id_mesa);
@@ -39,9 +48,7 @@ if ($num==1){
     $stmt->execute();
     echo "<script>  
 
-    location.href='../pages/terraza1.php';
-
-    </script>";
+    location.href='../pages/terraza1.php'; </script>";
 }
 
 

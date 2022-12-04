@@ -18,8 +18,8 @@ if(empty($_SESSION['login'])){
     <link rel="stylesheet" href="../css/terraza.css" />
     <script type="text/javascript" src="../js/modal.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="../js/valid-form-reservas.js"></script> -->
 
 </head>
 
@@ -95,19 +95,6 @@ if(empty($_SESSION['login'])){
         mysqli_stmt_execute($stmt);
         $resultadoconsulta=mysqli_stmt_get_result($stmt);
         $resultfa=$resultadoconsulta->fetch_all(MYSQLI_ASSOC);
-
-        // COMPROBAR SI LAS MESAS ESTAN RESERVADAS
-        // $fecha_actual = date("Y-m-d");
-        // $hora_actual = date("H:i:s");
-        // $sql="SELECT mesa.id as id_mesa, mesa.nombre_mesa as Nombre, reserva.fecha as fecha, reserva.hora as hora FROM tbl_mesa as mesa inner join tbl_reserva as reserva on mesa.id = reserva.id_mesa";
-
-        // // $sql = "SELECT id_mesa, fecha, hora FROM tbl_reserva";
-        // $resultado = mysqli_query($conexion,$sql);
-        // if ($resultado['fecha'] == $fecha_actual && $resultado['hora'] == $hora_actual) {
-
-        //     $conexion->query("UPDATE tbl_mesa SET estado = 'Ocupado' WHERE id = ");
-
-        // }
 
         ?>
 
@@ -238,6 +225,7 @@ window.onclick = function(event) {
     const urlParams = new URLSearchParams(valores);
 
     window.location.href.replace(window.location.search,'');
+
   if(urlParams.has('error'))
     Swal.fire({
         icon: 'error',
@@ -245,7 +233,13 @@ window.onclick = function(event) {
         showConfirmButton: false,
         timer: 1500
     })
-   
+    if(urlParams.has('fechamal'))
+    Swal.fire({
+        icon: 'error',
+        title: 'Fecha Incorrecta',
+        showConfirmButton: false,
+        timer: 1500
+    })
 </script>
 
 </body>

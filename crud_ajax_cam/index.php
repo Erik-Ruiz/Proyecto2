@@ -73,7 +73,7 @@ if(empty($_SESSION['login'])){
                             </div>
                             <div class="form-group">
                                 <label for="">Password</label>
-                                <input type="text" name="password" id="password" placeholder="Password" class="form-control">
+                                <input type="password" name="password" id="password" placeholder="Password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block" style="background-color: #536976; border-color: #536976;">

@@ -92,7 +92,7 @@ if(empty($_SESSION['login'])){
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    <div class="col-lg-6 ml-auto">
+                    <div >
                         <form action="" method="post" id="frmbusqueda">
                             <div class="form-group">
                                 <label for="buscra">Buscar:</label>

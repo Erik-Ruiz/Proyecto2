@@ -24,7 +24,7 @@ if(empty($_SESSION['login'])){
 </head>
 
 <body style="background-color: #BBD2C5;">
-    <nav class="navbar bg-light fixed-top" >
+<nav class="navbar bg-light fixed-top" >
   <div class="container-fluid">
 
     <a class="navbar-brand" href="../pages/camareros.php">Camareros<a class="navbar-brand" href="#">Reservas</a></a>
@@ -86,7 +86,7 @@ if(empty($_SESSION['login'])){
     </div>
   </div>
 </nav>
-    <div style="margin-top: 10%;" class="container">
+    <div style="margin-top: 5%;" class="container">
         <div class="row">
             <div class="col-lg-4" style="padding-top: 82px;">
                 <div class="card" >

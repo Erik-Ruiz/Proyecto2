@@ -16,8 +16,9 @@ if(empty($_SESSION['login'])){
     <title>CRUD php Vanilla</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d74b7c7c2.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -28,7 +29,7 @@ if(empty($_SESSION['login'])){
             <a class="navbar-brand" href="../pages/admin.php">Administrador <a class="navbar-brand" href="#">Registro de Mesas</a></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fa-solid fa-bars" ></i>
             </button>
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -83,7 +84,7 @@ if(empty($_SESSION['login'])){
                                 </select>
                             </div>
                             <div class="form-group">
-                                <button type="submit" value="Registrar" id="registrar" class="btn btn-primary btn-block" style="background-color: #536976;">Registrar</button>
+                                <button type="submit" value="Registrar" id="registrar" class="btn btn-primary btn-block" style="background-color: #536976; border-color: #536976;">Registrar</button>
                             </div>
                         </form>
                     </div>

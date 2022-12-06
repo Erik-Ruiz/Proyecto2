@@ -16,16 +16,23 @@ if ($funcion == 'Libre') {
 
 function ocupar($id){
     require "./connection.php";
+//     $fechaActual = date('Y-m-d');
 
-    $conexion->autocommit(false);
+//     $horaActual = date('h:i:s');
+// if(){
 
-    $conexion->query("UPDATE tbl_mesa SET cont_personas = cont_personas+4, estado = 'Ocupado' WHERE id = $id");
-    $DateAndTime = date('Y-m-d h:i:s', time());  
-    $conexion->query("INSERT INTO tbl_t_comer (t_i_comer,t_f_comer,id_mesa) VALUES ('$DateAndTime','',$id)");
+//     }else{
 
-    $conexion->commit();
+                $conexion->autocommit(false);
 
-     echo "<script>location.href='../pages/terraza1.php'</script>";
+        $conexion->query("UPDATE tbl_mesa SET cont_personas = cont_personas+4, estado = 'Ocupado' WHERE id = $id");
+        $DateAndTime = date('Y-m-d h:i:s', time());  
+        $conexion->query("INSERT INTO tbl_t_comer (t_i_comer,t_f_comer,id_mesa) VALUES ('$DateAndTime','',$id)");
+
+        $conexion->commit();
+
+        echo "<script>location.href='../pages/terraza1.php'</script>";
+    // }
 }
 
 function libre($id){

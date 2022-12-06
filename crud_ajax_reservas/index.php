@@ -18,46 +18,19 @@ if(empty($_SESSION['login'])){
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/valid-form-reservas.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8d74b7c7c2.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body style="background-color: #BBD2C5;">
-    <!-- <nav class="navbar bg-light fixed-top">
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="../pages/camareros.php">Camarero <a class="navbar-brand" href="#">Registro de Reservas</a></a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrador</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body align-self-center text-center">
-
-
-
-
-
-                    <form class="d-flex" role="search" action="../controller/logout.php" method="POST">
-                        <button class="btn btn-outline-danger" name="logout" type="submit">Log Out</button>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </nav> -->
     <nav class="navbar bg-light fixed-top" >
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="../pages/camareros.php">Camareros</a>
+    <a class="navbar-brand" href="../pages/camareros.php">Camareros<a class="navbar-brand" href="#">Reservas</a></a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
+    <i class="fa-solid fa-bars" ></i>
     </button>
 
 
@@ -67,10 +40,6 @@ if(empty($_SESSION['login'])){
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Camareros</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-
-          <a style="float: center;" href="../crud_ajax_reservas/index.php">
-              <button style="border-radius: 10px;">Reservas</button>
-          </a> 
 
       <div class="offcanvas-body align-self-center text-center">
         
@@ -162,16 +131,29 @@ if(empty($_SESSION['login'])){
             </div>
             <div class="col-lg-8">
                 <div class="row">
-                    <div class="col-lg-6 ml-auto">
+                    <div >
                         <form action="" method="post" id="frmbusqueda">
-                            <div class="form-group">
+                            <div >
                                 <label for="buscra">Buscar:</label>
                                 <input type="text" name="buscar" id="buscar" placeholder="Buscar..." class="form-control">
+                                
+                                
                             </div>
                         </form>
+
+                        <!-- <form class="d-flex" method="post" id="frmbusqueda">                          
+                            <tr>
+                            <th></th>
+                            <th scope="col"><input class="form-control me-2" type="text" name="buscar_id" id="buscar_id" placeholder="Id..." aria-label="Search"></th>
+                            <th scope="col"><input class="form-control me-2" type="text" name="buscar_id_mesa" id="buscar_id_mesa" placeholder="Nombre" aria-label="Search"></th>
+                            <th scope="col"><input class="form-control me-2" type="text" name="buscar_fecha" id="buscar_fecha" placeholder="Apellido" aria-label="Search"></th>
+                            <th scope="col"><input class="form-control me-2" type="text" name="buscar_hora" id="buscar_hora" placeholder="Apellido 2" aria-label="Search"></th>
+                        </form> -->
+                                        
                     </div>
                 </div>
                 <table class="table table-hover table-resposive" style="background-color: WHITE;">
+                
                     <thead style="background-color: #292E49; color: white">
                         <tr>
                             <th>ID</th>

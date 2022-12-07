@@ -60,7 +60,7 @@ if(empty($_SESSION['login'])){
                         <h3 class="text-center" style="color: White;">Registro de Mantenimiento</h3>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" id="frm">
+                        <form action="" method="post" id="frm" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="">Nombre</label>
                                 <input type="hidden" name="idp" id="idp" value="">
@@ -73,6 +73,10 @@ if(empty($_SESSION['login'])){
                             <div class="form-group">
                                 <label for="">Password</label>
                                 <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Imagen</label>
+                                <input name="userfile" type="file" class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="button" value="Registrar" id="registrar" class="btn btn-primary btn-block" style="background-color: #536976; border-color: #536976;">

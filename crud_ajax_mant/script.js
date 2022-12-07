@@ -13,6 +13,7 @@ function ListarProductos(busqueda) {
     ajax.onload = function () {
         var str="";
         if (ajax.status == 200) {
+            console.log(ajax.responseText);
             var json=JSON.parse(ajax.responseText);
              var tabla='';
              json.forEach(function(item) {
@@ -48,8 +49,6 @@ registrar.addEventListener("click", () => {
     var formdata = new FormData(form);
 
     if(validacion_ajax_mant()==true){
-
-
 
         var ajax = new XMLHttpRequest();
         ajax.open('POST', 'registrar.php');

@@ -11,7 +11,7 @@ if (isset($_POST)) {
         $stmt = $pdo->prepare("INSERT INTO tbl_mesa (nombre_mesa, estado, id_sala,id_camarero,id_mantenimiento) VALUES (:nom , :est, :sal, :cam, :mant)");
 
         $cam = 8;
-        $mant = 1;
+        $mant = 33;
         echo $sql;
         $stmt->bindParam(':nom', $nombre);
         $stmt->bindParam(':est', $estado);

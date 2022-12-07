@@ -120,8 +120,8 @@
 </thead>
 
 <tr>
-<td><?php echo $tiemporeparar[0]['Dif_Reparar'] ?></td>
-<td><?php echo $tiempomesa[0]['Dif_Comer'] ?></td>
+<!-- <td><?php echo $tiemporeparar[0]['Dif_Reparar'] ?></td>
+<td><?php echo $tiempomesa[0]['Dif_Comer'] ?></td> -->
 </tr>
 
 </body>

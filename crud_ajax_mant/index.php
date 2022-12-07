@@ -37,8 +37,17 @@ if(empty($_SESSION['login'])){
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Admin Mantenimiento</h5>
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Administrador</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+                    
+            <div class="offcanvas-body align-self-center text-center">
+
+                <form class="d-flex" role="search" action="../controller/logout.php" method="POST">
+                    <button class="btn btn-outline-danger" name="logout" type="submit">Log Out</button>
+                </form>
+
             </div>
 
         </div>

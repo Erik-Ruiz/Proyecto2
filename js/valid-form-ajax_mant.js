@@ -23,8 +23,14 @@ function validacion_ajax_mant() {
 
       else if (correo.lenght == 0) {
         
-        alert('Campo correo vacio');
-        return false;
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Correo vacio',
+          
+      }) 
+             return false;
       }
       else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo)) {
 

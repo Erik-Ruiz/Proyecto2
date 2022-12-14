@@ -3,7 +3,7 @@ function validacion() {
 
     // fechas = document.getElementById('fecha');
     fecha = document.getElementById('fecha').value;
-
+    mesa = document.getElementById('id_mesa').value;
     // horas = document.getElementById('hora');
     // hora = document.getElementById('hora').value;
     
@@ -15,7 +15,17 @@ function validacion() {
 
     // var fecha = new Date(fecha);
 
-if (FechaActual > fecha) {
+    if (mesa.lenght == 0) {
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Mesa no seleccionada',
+            
+        })
+        return false;
+      }
+      else if (FechaActual > fecha) {
 
         Swal.fire({
             icon: 'error',

@@ -11,15 +11,20 @@ function validacion() {
 
     if (correo.lenght == 0) {
         
-        alert('Campo correo vacio');
-        return false;
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Correo vacio',
+        
+    })
+      return false;
       }
       else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo)) {
 
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Correo vacio',
+            text: 'Correo erroneo',
             
         })
         return false;
@@ -27,8 +32,12 @@ function validacion() {
       
       else if (passw.lenght == 0) {
         // Si no se cumple la condicion...
-        alert('Campo password vacio');
-
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Password vacio',
+          
+      })
         return false;
       }      
       

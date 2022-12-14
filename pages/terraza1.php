@@ -240,6 +240,14 @@ window.onclick = function(event) {
         showConfirmButton: false,
         timer: 1500
     })
+    if(!urlParams.has('fechamal') || urlParams.has('error'))
+    Swal.fire({
+        icon: 'success',
+        title: 'Mesa reservada',
+        showConfirmButton: false,
+        timer: 1500
+    })
+
 </script>
 
 </body>

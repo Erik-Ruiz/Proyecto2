@@ -98,16 +98,13 @@ if(empty($_SESSION['login'])){
                             <div class="form-group">
                                 <label for="">Id_Mesa</label>
                                 <input type="hidden" name="idp" id="idp" value="">
-                                <input type="text" name="id_mesa" id="id_mesa" placeholder="Nombre" class="form-control">
+                                <input type="text" name="id_mesa" id="id_mesa" placeholder="Nombre" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="">Elige la fecha:</label>                                
                                 <input type="date" name="fecha" id="fecha" placeholder="Fecha" class="form-control" required>
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="">Hora</label>                                
-                                <input type="time" name="hora" id="hora" placeholder="Hora" class="form-control">
-                            </div> -->
+
                             <div class="form-group">
                             <label for="sala">Elige la hora:</label>
                                 <select name="hora" id="hora" placeholder="Hora" class="form-control" required>
